@@ -7,17 +7,13 @@
 # --------------------------------------------------------------
 # Project name, used for binaries
 
-NAME = MVerb
+NAME = d_midiThrough
 
 # --------------------------------------------------------------
 # Files to build
 
 FILES_DSP = \
-	DistrhoPluginMVerb.cpp
-
-FILES_UI  = \
-	DistrhoArtworkMVerb.cpp \
-	DistrhoUIMVerb.cpp
+MidiThroughExamplePlugin.cpp
 
 # --------------------------------------------------------------
 # Do some magic
@@ -27,25 +23,11 @@ include ../../dpf/Makefile.plugins.mk
 # --------------------------------------------------------------
 # Enable all possible plugin types
 
-ifeq ($(HAVE_JACK),true)
+ifeq ($(LINUX),true)
 TARGETS += jack
 endif
 
-TARGETS += ladspa
+TARGETS += lv2_dsp
 TARGETS += vst
 
-ifeq ($(HAVE_DGL),true)
-ifeq ($(HAVE_LIBLO),true)
-TARGETS += dssi
-endif
-endif
-
-ifeq ($(HAVE_DGL),true)
-TARGETS += lv2_sep
-else
-TARGETS += lv2_dsp
-endif
-
 all: $(TARGETS)
-
-# --------------------------------------------------------------

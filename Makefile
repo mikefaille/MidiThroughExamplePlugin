@@ -6,37 +6,16 @@
 
 include dpf/Makefile.base.mk
 
-all: dgl plugins gen
-
+all: plugins
 # --------------------------------------------------------------
 
-dgl:
-ifeq ($(HAVE_OPENGL),true)
-	$(MAKE) -C dpf/dgl opengl
-endif
-
-plugins: dgl
-	$(MAKE) all -C plugins/MVerb
-
-ifneq ($(CROSS_COMPILING),true)
-gen: plugins dpf/utils/lv2_ttl_generator
-	@$(CURDIR)/dpf/utils/generate-ttl.sh
-ifeq ($(MACOS),true)
-	@$(CURDIR)/dpf/utils/generate-vst-bundles.sh
-endif
-
-dpf/utils/lv2_ttl_generator:
-	$(MAKE) -C dpf/utils/lv2-ttl-generator
-else
-gen:
-endif
+plugins:
+	$(MAKE) all -C plugins/MidiThroughExamplePlugin
 
 # --------------------------------------------------------------
 
 clean:
-	$(MAKE) clean -C dpf/dgl
-	$(MAKE) clean -C dpf/utils/lv2-ttl-generator
-	$(MAKE) clean -C plugins/MVerb
+	$(MAKE) clean -C plugins/MidiThroughExamplePlugin
 	rm -rf bin build
 
 # --------------------------------------------------------------
