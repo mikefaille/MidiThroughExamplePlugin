@@ -144,10 +144,25 @@ protected:
 	    printf("key/note: %02x\n", midiEvents[i].data[1]);
 	    printf("value: %02x\n", midiEvents[i].data[2]);
 
+	    printf("-------\n" );
+	    // if the value == 13 it's the Z axis
+	    if ( keyNote == 0x62  ) {
 
 
-	    if ( keyNote == 0x62 ) {
+	      if (value == 0x11) {
+		printf("Axe x" );
+	      }
 
+
+	      if (value == 0x12) {
+		printf("Axe y" );
+	      }
+
+
+	      if (value == 0x13) {
+		printf("Axe z" );
+	      }
+	      printf("\n" );
 	      i++;
 	      uint32_t lsbValue = midiEvents[i++].data[2];
 
@@ -159,18 +174,24 @@ protected:
 
 	    }
 
+	    // printf("ext1: %02x\n", midiEvents[i].dataExt[0]);
+	    // printf("ext2: %02x\n", midiEvents[i].dataExt[1]);
+	    // printf("ext3: %02x\n", midiEvents[i].dataExt[2]);
+	    // printf("ext4: %02x\n", midiEvents[i].dataExt[4]);
+	    // printf("4nd: %02x\n", midiEvents[i].data[3]);
+	    // printf("5nd: %02x\n", midiEvents[i].data[4]);
+	    // printf("6nd: %02x\n", midiEvents[i].data[5]);
+	    // printf("7nd: %02x\n", midiEvents[i].data[6]);
+	    // printf("8nd: %02x\n", midiEvents[i].data[7]);
+	    // printf("9nd: %02x\n", midiEvents[i].data[8]);
+	    // printf("10nd: %02x\n", midiEvents[i].data[9]);
+	    // printf("11nd: %02x\n", midiEvents[i].data[10]);
+	    // printf("12nd: %02x\n", midiEvents[i].data[11]);
+
 	    // printf("status: %02x\n", (midiEvents[i].data[0] & 0xF0));
 	    // printf("key/note: %02x\n", midiEvents[i].data[1]);
 
 
-	    // printf("3nd: %02x\n", midiEvents[i].data[2]);
-	    printf("4nd: %02x\n", midiEvents[i].data[3]);
-	    printf("5nd: %02x\n", midiEvents[i].data[4]);
-	    printf("6nd: %02x\n", midiEvents[i].data[5]);
-	    printf("7nd: %02x\n", midiEvents[i].data[6]);
-	    printf("8nd: %02x\n", midiEvents[i].data[7]);
-	    printf("9nd: %02x\n", midiEvents[i].data[8]);
-	    writeMidiEvent(midiEvents[i]);
 	  }
 
 

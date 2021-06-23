@@ -1,0 +1,42 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/x86_64-linux-gnu-g++-10",
+      "MidiThroughExamplePlugin.cpp",
+      "-Wall",
+      "-Wextra",
+      "-pipe",
+      "-fPIC",
+      "-DPIC",
+      "-DNDEBUG",
+      "-O3",
+      "-ffast-math",
+      "-fdata-sections",
+      "-ffunction-sections",
+      "-mtune=generic",
+      "-msse",
+      "-msse2",
+      "-mfpmath=sse",
+      "-fvisibility=hidden",
+      "-DHAVE_JACK",
+      "-DHAVE_LIBLO",
+      "-DHAVE_CAIRO",
+      "-DHAVE_OPENGL",
+      "-std=gnu++0x",
+      "-g",
+      "-std=c++17",
+      "-Wall",
+      "-pedantic",
+      "-fvisibility-inlines-hidden",
+      "-I.",
+      "-I../../dpf/distrho",
+      "-I../../dpf/dgl",
+      "-c",
+      "-o",
+      "../../build/d_midiThrough/MidiThroughExamplePlugin.cpp.o"
+    ],
+    "directory": "/home/michael/src/MidiThroughExamplePlugin/plugins/MidiThroughExamplePlugin",
+    "file": "/home/michael/src/MidiThroughExamplePlugin/plugins/MidiThroughExamplePlugin/MidiThroughExamplePlugin.cpp",
+    "output": "/home/michael/src/MidiThroughExamplePlugin/plugins/MidiThroughExamplePlugin/../../build/d_midiThrough/MidiThroughExamplePlugin.cpp.o"
+  }
+]
