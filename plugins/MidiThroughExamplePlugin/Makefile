@@ -6,6 +6,7 @@
 
 # --------------------------------------------------------------
 # Project name, used for binaries
+CXXFLAGS=-g -std=c++17 -Wall -pedantic
 
 NAME = d_midiThrough
 
